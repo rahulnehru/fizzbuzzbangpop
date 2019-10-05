@@ -30,7 +30,7 @@ public class FizzBuzzBangPop {
      *  for input 4, (4), the score should be 4
      *  for input 11, (BangPop), 3
      *
-     TODO - (3) Which numbers from 0 to 100 have the highest score? Print the scores and numbers
+     TODO - (3) Which number(s) from 0 to 100 have the highest score?
      *
      */
 
