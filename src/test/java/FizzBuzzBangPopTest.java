@@ -164,7 +164,7 @@ public class FizzBuzzBangPopTest {
         String numAsString = Integer.toString(i);
         StringBuilder sb = new StringBuilder();
         String reversed = sb.append(numAsString).reverse().toString();
-        return reversed.contentEquals(numAsString);
+        return reversed.contentEquals(numAsString) && reversed.length() > 1;
     }
 
 }
