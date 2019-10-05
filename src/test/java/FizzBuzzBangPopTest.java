@@ -95,48 +95,20 @@ public class FizzBuzzBangPopTest {
     }
 
     @Test
-    public void convertReturnsFizzBuzzBangWhenNumberIsMultipleOfThreeAndFiveAndPrime() {
-        for (int i = 0; i < 100; i++) {
-            if(isMultipleOfThree(i) && isMultipleOfFive(i) && isPrimeNumber(i) && !isPalindrome(i)) {
-                assertEquals("FizzBuzzBang", FizzBuzzBangPop.convert(i));
-            }
+    public void sumCalculatesScoreOfEachNumber() {
+        for(int i = 0; i < 100; i ++) {
+            int score = getLastDigit(i);
+            if(isMultipleOfThree(i)) { score += 3; }
+            if(isMultipleOfFive(i)) { score += 5; }
+            if(isPrimeNumber(i)) { score += 7; }
+            if(isPalindrome(i)) { score += -5; }
+            assertEquals(score, FizzBuzzBangPop.score(i));
         }
     }
 
-    @Test
-    public void convertReturnsFizzBuzzPopWhenNumberIsMultipleOfThreeAndFiveAndPrime() {
-        for (int i = 0; i < 100; i++) {
-            if(isMultipleOfThree(i) && isMultipleOfFive(i) && !isPrimeNumber(i) && isPalindrome(i)) {
-                assertEquals("FizzBuzzPop", FizzBuzzBangPop.convert(i));
-            }
-        }
-    }
-
-    @Test
-    public void convertReturnsFizzBangPopWhenNumberIsMultipleOfThreeAndPrimeAndPalindrome() {
-        for (int i = 0; i < 100; i++) {
-            if(isMultipleOfThree(i) && !isMultipleOfFive(i) && isPrimeNumber(i) && isPalindrome(i)) {
-                assertEquals("FizzBangPop", FizzBuzzBangPop.convert(i));
-            }
-        }
-    }
-
-    @Test
-    public void convertReturnsBuzzBangPopWhenNumberIsMultipleOfFiveAndPrimeAndPalindrome() {
-        for (int i = 0; i < 100; i++) {
-            if(!isMultipleOfThree(i) && isMultipleOfFive(i) && isPrimeNumber(i) && isPalindrome(i)) {
-                assertEquals("BuzzBangPop", FizzBuzzBangPop.convert(i));
-            }
-        }
-    }
-
-    @Test
-    public void convertReturnsFizzBuzzBangPopWhenNumberIsMultipleOfThreeAndFiveAndPrimeAndPalindrome() {
-        for (int i = 0; i < 100; i++) {
-            if(isMultipleOfThree(i) && isMultipleOfFive(i) && isPrimeNumber(i) && isPalindrome(i)) {
-                assertEquals("FizzBuzzBangPop", FizzBuzzBangPop.convert(i));
-            }
-        }
+    private int getLastDigit(int i) {
+        char[] asAr = Integer.toString(i).toCharArray();
+        return Integer.parseInt(String.valueOf(asAr[asAr.length - 1]));
     }
 
 
